@@ -302,7 +302,7 @@ onMounted(() => {
     position: absolute;
     bottom: -10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); 
   }
 }
 
