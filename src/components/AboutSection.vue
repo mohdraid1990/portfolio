@@ -37,7 +37,7 @@ const profile = {
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #43669BFF 0%, rgb(180, 187, 199) 100%);
   border-radius: 10px;
-  margin: 2rem auto;
+  margin: 10rem auto;
   max-width: 1200px;
 }
 
