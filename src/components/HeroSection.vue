@@ -99,8 +99,8 @@ onMounted(() => {
     opacity: 0.9;
 
     .highlight {
-      color: var(--primary-color);
-      border-right: 3px solid currentColor;
+      color: #9690ed;
+      border-right: 1px solid currentColor;
       padding-right: 4px;
       font-weight: 600;
     }
@@ -159,11 +159,11 @@ onMounted(() => {
 @media (max-width: 768px) {
   .hero-content {
     h1 {
-      font-size: 2.5em;
+      font-size: 1.5em;
     }
 
     .typing-text {
-      font-size: 1.5em;
+      font-size: 1em;
     }
   }
 }
