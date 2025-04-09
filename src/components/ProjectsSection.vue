@@ -1,0 +1,442 @@
+<script setup>
+import { onMounted } from "vue";
+import { gsap } from "gsap";
+
+import carImage from "../assets/CARS.png";
+import TravilImage from "../assets/Travil.webp";
+import schoolImage from "../assets/school.webp";
+import GameImage from "../assets/Game.webp";
+import sngosar from "../assets/sngosar.png";
+import sngosar1 from "../assets/sngosar-0.png";
+import bondi from "../assets/bondi.webp";
+import resturant from "../assets/resturant.webp";
+import Toster from "../assets/Toster.webp";
+import weather from "../assets/weather-api.webp";
+import Convert from "../assets/Convert-money.webp";
+import furniture from "../assets/furniture.webp";
+import Rangi from "../assets/rangi.webp";
+import Toster1 from "../assets/Tooster-media.webp";
+import PRODUCT from "../assets/PRODUCT-MANAGEMENT-SYSTEM.png";
+import ChatApp from "../assets/chat-app.png";
+import Todo from "../assets/Todo-list.webp";
+import Shop from "../assets/Shop-api.png";
+import WEATHERVUEJS from "../assets/WEATHER-APP-VUEJS.png";
+import pro from "../assets/pro-mang-vuejs.png";
+import Post from "../assets/add-posts.png";
+import Transilation from "../assets/Transilation-App.png";
+import nuxt from "../assets/nuxt-api.png";
+import Book from "../assets/book.png";
+import Film from "../assets/film.png";
+
+
+
+
+const projects = [
+  {
+    title: "Rental-cars",
+    description:
+      "A modern car rental platform with a sleek, responsive design and intuitive navigation.",
+    image: carImage,
+    url: "https://mohdraid1990.github.io/Rental-cars/",
+    tags: ["HTML", "CSS", "Java Script"],
+  },
+  {
+    title: "Travil",
+    description:
+      "A stylish travel agency site with a responsive design, showcasing destinations and intuitive navigation.",
+    image: TravilImage,
+    url: "https://mohdraid1990.github.io/travil/",
+    tags: ["HTML", "CSS", "Java Script"],
+  },
+  {
+    title: "School",
+    description:
+      "An educational platform with a clean, modern design, offering a seamless experience for school-related content.",
+    image: schoolImage,
+    url: "https://mohdraid1990.github.io/schools-/",
+    tags: ["HTML", "CSS", "Java Script"],
+  },
+  {
+    title: "Game",
+    description:
+      "A dynamic gaming site with interactive features and a modern design, built for an engaging user experience.",
+    image: GameImage,
+    url: "https://mohdraid1990.github.io/schools-/",
+    tags: ["HTML", "CSS", "Java Script"],
+  },
+  {
+    title: "sngosar",
+    description:
+      "A professional industrial equipment site with a robust, modern design tailored for business needs.",
+    image: sngosar1,
+    url: "https://mohdraid1990.github.io/Neftegazoborudovanie/",
+    tags: ["HTML", "CSS", "Java Script"],
+  },
+  {
+    title: "bondi",
+    description:
+      "A sleek, responsive website built with Bootstrap 5, featuring modern design and rapid development.",
+    image: bondi,
+    url: "https://mohdraid1990.github.io/Restaurant/",
+    tags: ["HTML", "CSS", "Java Script", "BootStap"],
+  },
+  {
+    title: "Restaurant",
+    description:
+      "An elegant restaurant site with a modern layout, showcasing menus and a delightful user experience.",
+    image: resturant,
+    url: "https://mohdraid1990.github.io/Bondi_bootstrap5/",
+    tags: ["HTML", "CSS", "Java Script"],
+  },
+  {
+    title: "sngosar",
+    description:
+      "A corporate site for industrial solutions, featuring a clean design and user-friendly navigation.",
+    image: sngosar,
+    url: "  https://mohdraid1990.github.io/sngosar/",
+    tags: ["HTML", "CSS", "Java Script"],
+  },
+  {
+    title: "Toster",
+    description:
+      "A minimalist template site with a creative design and smooth, responsive functionality.",
+    image: Toster,
+    url: "https://mohdraid1990.github.io/Temp-/",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "Weather App",
+    description:
+      "A real-time weather application with API integration, offering a clean and responsive design.",
+    image: weather,
+    url: "https://mohdraid1990.github.io/Weather-App/",
+    tags: ["HTML", "CSS", "JavaScript", "API"],
+  },
+  {
+    title: "Convert Money",
+    description:
+      "A currency converter app with API integration, featuring a simple and responsive interface.",
+    image: Convert,
+    url: "https://mohdraid1990.github.io/convert-money-/",
+    tags: ["HTML", "CSS", "JavaScript", "API"],
+  },
+  {
+    title: "Furniture",
+    description:
+      "A modern furniture e-commerce site with a sleek design and responsive product showcase.",
+    image: furniture,
+    url: "https://mohdraid1990.github.io/furniture/",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "Rangi",
+    description:
+      "A vibrant and creative website template with a colorful design and responsive layout.",
+    image: Rangi,
+    url: "https://mohdraid1990.github.io/rangi/",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "Toster Media",
+    description:
+      "A media-focused site with a modern, responsive design and engaging visual elements.",
+    image: Toster1,
+    url: "https://mohdraid1990.github.io/Toster-media/",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "Product Management System",
+    description:
+      "A streamlined product management tool with a clean interface and efficient functionality.",
+    image: PRODUCT,
+    url: "https://mohdraid1990.github.io/PRODUCT-MANAGEMENT-SYSTEM/",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "Chat App",
+    description:
+      "A real-time chat application built with Vue.js, featuring a sleek and interactive interface.",
+    image: ChatApp,
+    url: "https://chat-app-vuejs.netlify.app/",
+    tags: ['HTML','SASS',"Vue.js",  "Real-time", "Pinia"],
+  },
+  {
+    title: "Todo List with API",
+    description:
+      "A task management app built with Vue.js, integrating APIs for efficient todo tracking.",
+    image: Todo,
+    url: "https://main--joyful-chimera-f3e293.netlify.app/#/%E2%80%8EThank",
+    tags: ['HTML','SASS',"Vue.js",  "API"],
+  },
+  {
+    title: "Shop with API",
+    description:
+      "An e-commerce platform built with Vue.js, featuring API-driven product listings and a modern design.",
+    image: Shop,
+    url: "https://master--friendly-dasik-cbcccf.netlify.app/",
+    tags: ['HTML','SASS',"Vue.js", "JavaScript", "API"],
+  },
+  {
+    title: "Weather App (Vue.js)",
+    description:
+      "A Vue.js-powered weather app with API integration, delivering real-time updates in a sleek design.",
+    image: WEATHERVUEJS,
+    url: "https://main--dynamic-narwhal-935610.netlify.app/",
+    tags: ['HTML','SASS',"Vue.js", "JavaScript", "API"],
+  },
+  {
+  title: 'Product Management (Vue.js)',
+  description: 'A Vue.js-based product management system with a clean, efficient interface for inventory tracking.',
+  image: pro ,
+  url: 'https://main--celebrated-torrone-3f794f.netlify.app/',
+  tags: ['HTML','SASS','Vue.js', 'JavaScript']
+  },
+{
+  title: 'Add Posts (Nuxt.js)',
+  description: 'A Nuxt.js app for creating posts with API integration, featuring a modern and responsive design.',
+  image: Post ,
+  url: 'https://radiant-profiterole-85905a.netlify.app/',
+  tags: ['HTML','SASS','Nuxt.js',  'API']
+  },
+{
+  title: 'Translation App (Vite)',
+  description: 'A translation app built with Vite and Vue.js, offering a fast, responsive multilingual experience.',
+  image: Transilation ,
+  url: 'https://vocal-frangipane-73e5c3.netlify.app/',
+  tags: ['HTML','SASS','Vite', 'Vue.js', 'JavaScript']
+  },
+{
+  title: 'Nuxt API Project',
+  description: 'A Nuxt.js project with API integration, featuring a modern design and seamless functionality.',
+  image: nuxt,
+  url: 'https://project-api-nuxt.netlify.app/',
+  tags: ['HTML','SASS','Pinia','Nuxt.js',  'API']
+  },
+{
+  title: 'Book App',
+  description: 'A Vue.js-based book app with a clean design, offering an intuitive interface for book management.',
+  image: Book,
+  url: 'https://book-0.netlify.app/',
+  tags: ['HTML','SASS','Vue.js']
+  },
+  {
+  title: 'movie App',
+  description: 'A Vue.js-powered film app with a sleek design, showcasing movie details and a responsive layout.',
+  image: Film,
+  url: 'https://film-app-0.netlify.app/',
+  tags: ['HTML','SASS','API','Pinia','Vue.js']
+}
+ 
+
+];
+
+onMounted(() => {
+  // GSAP animations
+  gsap.from(".section-title", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  gsap.from(".project-card", {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power3.out",
+    delay: 0.3,
+  });
+});
+</script>
+
+<template>
+  <section id="projects" class="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <a
+        v-for="project in projects"
+        :key="project.title"
+        :href="project.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-card"
+      >
+        <div class="project-image">
+          <img :src="project.image" :alt="project.title" />
+        </div>
+        <div class="project-content">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <div class="tags">
+            <span v-for="tag in project.tags" :key="tag" class="tag">{{
+              tag
+            }}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+</template>
+
+<style lang="scss" scoped>
+.projects {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 2.5rem;
+  color: #2c3e50;
+  position: relative;
+  &::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #3498db;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color */
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.project-image {
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    padding-top: 20px;
+  }
+
+  .project-card:hover & img {
+    transform: scale(1.05); /* Zoom effect on hover */
+  }
+}
+
+.project-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    margin: 0 0 0.75rem;
+    color: #3498db;
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+
+  p {
+    color: #2c3e50;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    flex-grow: 1;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  transition: background 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background: #3498db;
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+
+  .section-title {
+    font-size: 2em;
+    margin-bottom: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    border-radius: 10px;
+  }
+
+  .project-image img {
+    height: 200px;
+  }
+
+  .project-content {
+    padding: 1rem;
+    h3 {
+      font-size: 1.3em;
+    }
+    p {
+      font-size: 0.95em;
+    }
+    .tag {
+      font-size: 0.85em;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image img {
+    height: 180px;
+  }
+}
+</style>
