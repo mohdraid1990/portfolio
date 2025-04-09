@@ -66,15 +66,14 @@ onMounted(() => {
 
 <style lang="scss">
 :root {
-  --primary-color: #4f46e5;
-  --primary-dark: #4338ca;
-  --secondary-color: #10b981;
-  --text-color: #1f2937;
-  --bg-color: #2A1958FF;
+  --primary-color: #4f46e5; /* Indigo */
+  --primary-dark: #4338ca; /* Darker Indigo */
+  --secondary-color: #10b981; /* Green */
+  --text-color: #Ffffff; /* Dark Gray */
+  --bg-color: rgba(15, 23, 42, 0.95); /* Deep Purple */
   --section-padding: 4rem 0;
   --transition-speed: 0.3s;
   --border-radius: 8px;
-  
   --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
@@ -99,7 +98,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-color);
   backdrop-filter: blur(12px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   z-index: 1000;
@@ -214,7 +213,7 @@ body {
     display: block;
     width: 28px;
     height: 3px;
-    background: var(--primary-color);
+    background: var(--text-color); /* Fixed to use primary color */
     margin: 5px 0;
     border-radius: 2px;
     transition: all var(--transition-speed) ease;
@@ -238,7 +237,7 @@ body {
 .nav-mobile {
   display: none;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.98);
+  background: var(--bg-color);
   backdrop-filter: blur(12px);
   padding: 2rem;
   position: fixed;
@@ -322,22 +321,5 @@ main {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: rgba(255, 255, 255, 0.87);
-    --bg-color: #0f172a;
-  }
 
-  .header {
-    background: rgba(15, 23, 42, 0.95);
-  }
-
-  .nav-mobile {
-    background: rgba(15, 23, 42, 0.98);
-  }
-
-  .menu-toggle span {
-    background: #ffffff;
-  }
-}
 </style>
