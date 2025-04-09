@@ -41,7 +41,7 @@ const projects = [
     tags: ["HTML", "CSS", "Java Script"],
   },
   {
-    title: "Travil",
+    title: "Travel",
     description:
       "A stylish travel agency site with a responsive design, showcasing destinations and intuitive navigation.",
     image: TravilImage,
