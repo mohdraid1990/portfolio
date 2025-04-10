@@ -34,10 +34,9 @@ const profile = {
 
 <style lang="scss" scoped>
 .about {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #43669BFF 0%, rgb(180, 187, 199) 100%);
+  padding: 6rem 2rem;
+
   border-radius: 10px;
-  margin: 10rem auto;
   max-width: 1200px;
 }
 
@@ -45,7 +44,7 @@ const profile = {
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 2rem;
-  color: #E2E8EEFF;
+  color:var(--text-color);
   position: relative;
   &::after {
     content: '';
@@ -73,9 +72,8 @@ const profile = {
     max-width: 250px; // Slightly larger for better visibility
     border-radius: 20px; // Softer corners instead of full circle
     display: block;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 4px solid #fff; // White border for a clean look
     &:hover {
       transform: translateY(-5px); // Subtle lift on hover
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
@@ -86,13 +84,14 @@ const profile = {
 .profile-text {
   font-size: 1.2em;
   line-height: 1.8;
-  color: #34495e;
-  background: rgba(255, 255, 255, 0.9);
+
+
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
   p {
-    margin: 0;
+  
+    color: var(--text-color);
   }
 }
 
@@ -114,7 +113,7 @@ const profile = {
   }
 
   .profile-text {
-    font-size: 1em;
+    font-size: 0.6em;
     padding: 1.5rem;
   }
 
