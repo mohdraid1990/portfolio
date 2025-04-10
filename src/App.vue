@@ -272,7 +272,9 @@ body {
 
 main {
   padding: 2rem;
-  min-height: calc(100vh - 6rem);
+  min-height: calc(100vh - 8rem);
+
+
 }
 
 .page-enter-active,
