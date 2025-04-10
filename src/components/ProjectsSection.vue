@@ -519,9 +519,7 @@ const animateProjects = () => {
 
 // Responsive design for mobile devices
 @media (max-width: 480px) {
-  .filter-toggle input {
-    width: 60px !important;
-  }
+ 
   .filter-toggle label {
     font-size: 0.8em;
   }
