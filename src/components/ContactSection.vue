@@ -168,7 +168,6 @@ onMounted(() => {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: #2c3e50;
-  font-size: 1.1em;
   font-weight: 500;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   &:hover {
@@ -208,7 +207,7 @@ onMounted(() => {
 
   .contact-item,
   .social-link {
-    padding: 0.7rem;
+
     .icon {
       font-size: 1.3em;
     }
@@ -229,10 +228,6 @@ font-size: 0.7em;
     font-size: 1.8em;
   }
 
-  .contact-item,
-  .social-link {
-    padding: 0.7rem;
-  }
- 
+
 }
 </style>
