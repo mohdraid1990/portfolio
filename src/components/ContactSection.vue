@@ -86,10 +86,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .contact {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 10px;
-  margin: 2rem auto;
+ padding: 6rem 2rem;
+
   max-width: 1200px;
 }
 
@@ -97,7 +95,7 @@ onMounted(() => {
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 2.5rem;
-  color: #2c3e50;
+  color:var(--text-color);
   position: relative;
   &::after {
     content: "";
@@ -191,7 +189,7 @@ onMounted(() => {
 @media (max-width: 768px) {
   .contact {
     padding: 2rem 1rem;
-    margin: 1rem;
+
   }
 
   .section-title {
@@ -210,13 +208,14 @@ onMounted(() => {
 
   .contact-item,
   .social-link {
-    padding: 0.8rem;
+    padding: 0.7rem;
     .icon {
       font-size: 1.3em;
     }
     a,
     span {
-      font-size: 1em;
+font-size: 0.7em;
+
     }
   }
 }
@@ -234,5 +233,6 @@ onMounted(() => {
   .social-link {
     padding: 0.7rem;
   }
+ 
 }
 </style>
