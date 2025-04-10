@@ -38,11 +38,10 @@ const skills = [
 </template>
 
 <style lang="scss" scoped>
+
 .skills {
-  padding: 4rem 2rem;
-  background: #fff;
+  padding: 6rem 2rem;
   border-radius: 10px;
-  margin: 2rem auto;
   max-width: 1200px;
 }
 
@@ -50,7 +49,7 @@ const skills = [
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 2.5rem;
-  color: #2c3e50;
+  color: var(--text-color);
   position: relative;
   &::after {
     content: "";
@@ -72,12 +71,7 @@ const skills = [
 }
 
 .skill-card {
-  background: rgba(
-    52,
-    152,
-    219,
-    0.1
-  ); // Light blue background using primary color
+  background: var(--text-color);
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
