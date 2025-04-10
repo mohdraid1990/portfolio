@@ -1,10 +1,10 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref, computed, watch } from "vue";
 import { gsap } from "gsap";
 
+// Import images for the projects
 import carImage from "../assets/CARS.png";
 import TravilImage from "../assets/Travil.webp";
-import schoolImage from "../assets/school.webp";
 import GameImage from "../assets/Game.webp";
 import sngosar from "../assets/sngosar.png";
 import sngosar1 from "../assets/sngosar-0.png";
@@ -28,9 +28,7 @@ import nuxt from "../assets/nuxt-api.png";
 import Book from "../assets/book.png";
 import Film from "../assets/film.png";
 
-
-
-
+// Array of project objects with their details
 const projects = [
   {
     title: "Rental-cars",
@@ -48,20 +46,13 @@ const projects = [
     url: "https://mohdraid1990.github.io/travil/",
     tags: ["HTML", "CSS", "Java Script"],
   },
-  {
-    title: "School",
-    description:
-      "An educational platform with a clean, modern design, offering a seamless experience for school-related content.",
-    image: schoolImage,
-    url: "https://mohdraid1990.github.io/schools-/",
-    tags: ["HTML", "CSS", "Java Script"],
-  },
+
   {
     title: "Game",
     description:
       "A dynamic gaming site with interactive features and a modern design, built for an engaging user experience.",
     image: GameImage,
-    url: "https://mohdraid1990.github.io/schools-/",
+    url: "https://mohdraid1990.github.io/Pro-Game/",
     tags: ["HTML", "CSS", "Java Script"],
   },
   {
@@ -93,7 +84,7 @@ const projects = [
     description:
       "A corporate site for industrial solutions, featuring a clean design and user-friendly navigation.",
     image: sngosar,
-    url: "  https://mohdraid1990.github.io/sngosar/",
+    url: "https://mohdraid1990.github.io/sngosar/",
     tags: ["HTML", "CSS", "Java Script"],
   },
   {
@@ -158,7 +149,7 @@ const projects = [
       "A real-time chat application built with Vue.js, featuring a sleek and interactive interface.",
     image: ChatApp,
     url: "https://chat-app-vuejs.netlify.app/",
-    tags: ['HTML','SASS',"Vue.js",  "Real-time", "Pinia"],
+    tags: ["HTML", "SASS", "Vue.js", "Pinia"],
   },
   {
     title: "Todo List with API",
@@ -166,7 +157,7 @@ const projects = [
       "A task management app built with Vue.js, integrating APIs for efficient todo tracking.",
     image: Todo,
     url: "https://main--joyful-chimera-f3e293.netlify.app/#/%E2%80%8EThank",
-    tags: ['HTML','SASS',"Vue.js",  "API"],
+    tags: ["HTML", "SASS", "Vue.js", "API"],
   },
   {
     title: "Shop with API",
@@ -174,7 +165,7 @@ const projects = [
       "An e-commerce platform built with Vue.js, featuring API-driven product listings and a modern design.",
     image: Shop,
     url: "https://master--friendly-dasik-cbcccf.netlify.app/",
-    tags: ['HTML','SASS',"Vue.js", "JavaScript", "API"],
+    tags: ["HTML", "SASS", "Vue.js",  "API"],
   },
   {
     title: "Weather App (Vue.js)",
@@ -182,80 +173,125 @@ const projects = [
       "A Vue.js-powered weather app with API integration, delivering real-time updates in a sleek design.",
     image: WEATHERVUEJS,
     url: "https://main--dynamic-narwhal-935610.netlify.app/",
-    tags: ['HTML','SASS',"Vue.js", "JavaScript", "API"],
+    tags: ["HTML", "SASS", "Vue.js",  "API"],
   },
   {
-  title: 'Product Management (Vue.js)',
-  description: 'A Vue.js-based product management system with a clean, efficient interface for inventory tracking.',
-  image: pro ,
-  url: 'https://main--celebrated-torrone-3f794f.netlify.app/',
-  tags: ['HTML','SASS','Vue.js', 'JavaScript']
-  },
-{
-  title: 'Add Posts (Nuxt.js)',
-  description: 'A Nuxt.js app for creating posts with API integration, featuring a modern and responsive design.',
-  image: Post ,
-  url: 'https://radiant-profiterole-85905a.netlify.app/',
-  tags: ['HTML','SASS','Nuxt.js',  'API']
-  },
-{
-  title: 'Translation App (Vite)',
-  description: 'A translation app built with Vite and Vue.js, offering a fast, responsive multilingual experience.',
-  image: Transilation ,
-  url: 'https://vocal-frangipane-73e5c3.netlify.app/',
-  tags: ['HTML','SASS','Vite', 'Vue.js', 'JavaScript']
-  },
-{
-  title: 'Nuxt API Project',
-  description: 'A Nuxt.js project with API integration, featuring a modern design and seamless functionality.',
-  image: nuxt,
-  url: 'https://project-api-nuxt.netlify.app/',
-  tags: ['HTML','SASS','Pinia','Nuxt.js',  'API']
-  },
-{
-  title: 'Book App',
-  description: 'A Vue.js-based book app with a clean design, offering an intuitive interface for book management.',
-  image: Book,
-  url: 'https://book-0.netlify.app/',
-  tags: ['HTML','SASS','Vue.js']
+    title: "Product Management (Vue.js)",
+    description:
+      "A Vue.js-based product management system with a clean, efficient interface for inventory tracking.",
+    image: pro,
+    url: "https://main--celebrated-torrone-3f794f.netlify.app/",
+    tags: ["HTML", "SASS", "Vue.js"],
   },
   {
-  title: 'movie App',
-  description: 'A Vue.js-powered film app with a sleek design, showcasing movie details and a responsive layout.',
-  image: Film,
-  url: 'https://film-app-0.netlify.app/',
-  tags: ['HTML','SASS','API','Pinia','Vue.js']
-}
- 
-
+    title: "Add Posts (Nuxt.js)",
+    description:
+      "A Nuxt.js app for creating posts with API integration, featuring a modern and responsive design.",
+    image: Post,
+    url: "https://radiant-profiterole-85905a.netlify.app/",
+    tags: ["HTML", "SASS", "Nuxt.js", "API"],
+  },
+  {
+    title: "Translation App (Vite)",
+    description:
+      "A translation app built with Vite and Vue.js, offering a fast, responsive multilingual experience.",
+    image: Transilation,
+    url: "https://vocal-frangipane-73e5c3.netlify.app/",
+    tags: ["HTML", "SASS", "Vite", "Vue.js"],
+  },
+  {
+    title: "Nuxt API Project",
+    description:
+      "A Nuxt.js project with API integration, featuring a modern design and seamless functionality.",
+    image: nuxt,
+    url: "https://project-api-nuxt.netlify.app/",
+    tags: ["HTML", "SASS", "Pinia", "Nuxt.js", "API"],
+  },
+  {
+    title: "Book App",
+    description:
+      "A Vue.js-based book app with a clean design, offering an intuitive interface for book management.",
+    image: Book,
+    url: "https://book-0.netlify.app/",
+    tags: ["HTML", "SASS", "Vue.js"],
+  },
+  {
+    title: "movie App",
+    description:
+      "A Vue.js-powered film app with a sleek design, showcasing movie details and a responsive layout.",
+    image: Film,
+    url: "https://film-app-0.netlify.app/",
+    tags: ["HTML", "SASS", "API", "Pinia", "Vue.js"],
+  },
 ];
 
+
+
+// Reactive variable to track the filter state
+const showFrameworksOnly = ref(false);
+
+// Computed property to filter projects based on the toggle state
+const filteredProjects = computed(() => {
+  if (showFrameworksOnly.value) {
+    // Switch ON: Show only projects WITH frameworks (Vue.js, Nuxt.js, Vite, Pinia)
+    return projects.filter((project) =>
+      project.tags.some((tag) => ["Vue.js", "Nuxt.js", "Vite", "Pinia"].includes(tag))
+    );
+  } else {
+    // Switch OFF: Show only projects WITHOUT frameworks (only HTML, CSS, JavaScript)
+    return projects.filter((project) => {
+      const tags = project.tags;
+      // Check if tags only include HTML, CSS, JavaScript (and variants) and no frameworks
+      return tags.every((tag) =>
+        ["HTML", "CSS", "JavaScript", "Java Script"].includes(tag)
+      );
+    });
+  }
+});
+
+// GSAP animations
 onMounted(() => {
-  // GSAP animations
   gsap.from(".section-title", {
     y: 50,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
   });
-
-  gsap.from(".project-card", {
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "power3.out",
-    delay: 0.3,
-  });
+  animateProjects(); // Initial animation
 });
+
+// Watch for filter changes to re-run animation
+watch(filteredProjects, () => {
+  animateProjects();
+});
+
+// Function to animate project cards smoothly
+const animateProjects = () => {
+  gsap.fromTo(
+    ".project-card",
+    { opacity: 0, scale: 0.95 }, // Start slightly scaled down
+    {
+      opacity: 1,
+      scale: 1,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: "power2.out",
+      overwrite: "auto",
+    }
+  );
+};
 </script>
 
 <template>
   <section id="projects" class="projects">
     <h2 class="section-title">Projects</h2>
+    <div class="filter-toggle">
+      <label for="framework-toggle">Show projects with frameworks only</label>
+      <input type="checkbox" id="framework-toggle" v-model="showFrameworksOnly" />
+    </div>
     <div class="projects-grid">
       <a
-        v-for="project in projects"
+        v-for="project in filteredProjects"
         :key="project.title"
         :href="project.url"
         target="_blank"
@@ -269,9 +305,7 @@ onMounted(() => {
           <h3>{{ project.title }}</h3>
           <p>{{ project.description }}</p>
           <div class="tags">
-            <span v-for="tag in project.tags" :key="tag" class="tag">{{
-              tag
-            }}</span>
+            <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
           </div>
         </div>
       </a>
@@ -280,19 +314,20 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+// Styles for the projects section
 .projects {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 6rem 2rem;
   border-radius: 10px;
-  margin: 2rem auto;
   max-width: 1200px;
+  margin: 0 auto; // Center the section
 }
 
+// Section title styling
 .section-title {
   text-align: center;
   font-size: 2.5em;
-  margin-bottom: 2.5rem;
-  color: #2c3e50;
+  margin-bottom: 1rem;
+  color: var(--text-color);
   position: relative;
   &::after {
     content: "";
@@ -302,48 +337,101 @@ onMounted(() => {
     position: absolute;
     bottom: -10px;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
   }
 }
 
+// Styles for the filter toggle switch
+.filter-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  label {
+    font-size: 1.2em;
+    color: var(--text-color);
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 50px;
+    height: 24px;
+    background: #ddd;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:checked {
+      background: #3498db;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s ease;
+    }
+
+    &:checked::before {
+      transform: translateX(26px);
+    }
+  }
+}
+
+// Grid layout for project cards
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  padding: 0 1rem;
+  padding: 1rem 0;
+  min-height: 600px; // Set a minimum height to stabilize layout
+  align-content: start; // Prevent stretching
 }
 
+// Project card styling
 .project-card {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease ;
   display: flex;
   flex-direction: column;
-  text-decoration: none; /* Remove underline from link */
-  color: inherit; /* Inherit text color */
+  text-decoration: none;
+  color: inherit;
+  height: 100%; // Ensure cards fill their grid cell
+     &:hover {
+   transform: scale(1.05);
 
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+ 
+
   }
+
 }
 
+// Project image styling
 .project-image {
   img {
     width: 100%;
     height: 150px;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    transition: all 0.2s ease-in;
     padding-top: 20px;
+ 
   }
 
-  .project-card:hover & img {
-    transform: scale(1.05); /* Zoom effect on hover */
-  }
+
 }
 
+// Project content styling
 .project-content {
   padding: 1.5rem;
   flex-grow: 1;
@@ -366,6 +454,7 @@ onMounted(() => {
   }
 }
 
+// Tags styling
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -388,6 +477,7 @@ onMounted(() => {
   }
 }
 
+// Responsive design for tablets
 @media (max-width: 768px) {
   .projects {
     padding: 2rem 1rem;
@@ -402,6 +492,7 @@ onMounted(() => {
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    min-height: 400px; // Adjusted for smaller screens
   }
 
   .project-card {
@@ -426,17 +517,31 @@ onMounted(() => {
   }
 }
 
+// Responsive design for mobile devices
 @media (max-width: 480px) {
+  .filter-toggle input {
+    width: 60px !important;
+  }
+  .filter-toggle label {
+    font-size: 0.8em;
+  }
   .projects {
     padding: 1.5rem 0.5rem;
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    justify-content: center;
+    min-height: 300px; // Adjusted for mobile
   }
 
   .project-image img {
     height: 180px;
+  }
+}
+
+@media (max-width: 340px) {
+  .filter-toggle input {
+    width: 95px !important;
   }
 }
 </style>
