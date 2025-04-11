@@ -237,7 +237,7 @@ body {
 .nav-mobile {
   display: none;
   flex-direction: column;
-  background: var(--bg-color);
+    background: rgb(0 15 49);
   backdrop-filter: blur(12px);
   padding: 2rem;
   position: fixed;
@@ -254,14 +254,14 @@ body {
   }
 
   .nav-link {
-    padding: 1.2rem 2rem;
+    padding: 0.8em 1rem;
     color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.3em;
     border-radius: var(--border-radius);
     transition: all var(--transition-speed) ease;
-
+        margin-top: 50px;
     &:hover, &.router-link-active {
       color: var(--primary-color);
       background: rgba(79, 70, 229, 0.15);
@@ -318,9 +318,7 @@ main {
     display: flex;
   }
 
-  main {
-    padding: 1rem;
-  }
+
 }
 
 
