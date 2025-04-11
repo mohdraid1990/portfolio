@@ -68,6 +68,7 @@ const skills = [
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
   padding: 0 1rem;
+  justify-content: center;
 }
 
 .skill-card {
@@ -126,9 +127,6 @@ h3 {
 }
 
 @media (max-width: 480px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  }
 
   .skill-card {
     padding: 0.8rem;
