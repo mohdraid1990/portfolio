@@ -188,4 +188,15 @@ onMounted(() => {
   }
 
 }
+
+@media (max-width: 500px) {
+  .hero-content {
+    h1 {
+      font-size: 1em !important;
+    }
+     .typing-text {
+      font-size: 0.8em;
+    }
+  }
+}
 </style>
