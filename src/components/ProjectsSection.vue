@@ -28,7 +28,10 @@ import nuxt from "../assets/nuxt-api.png";
 import Book from "../assets/book.png";
 import Film from "../assets/film.png";
 import Dashboard from "../assets/Dashboard.png";
-import softline from "../assets/softline.png";
+import softline from "../assets/soft-line.png";
+
+
+
 // Array of project objects with their details
 const projects = [
   {
@@ -225,24 +228,23 @@ const projects = [
     tags: ["HTML", "SASS", "API", "Pinia", "Vue.js"],
   },
 
-{
-  title: "Dashboard App",
-  description:
-    "A Vue.js-powered task management dashboard with a responsive Kanban board, enabling users to organize projects and tasks seamlessly. Features multi-language support (Arabic/English), dark/light themes, and drag-and-drop functionality.",
-  image: Dashboard, 
-  url: "https://famous-bonbon-63ea46.netlify.app/", 
-  tags: ["HTML", "SCSS", "Vue.js", "Pinia", "Vue-i18n", "vuedraggable"]
+  {
+    title: "Dashboard App",
+    description:
+      "A Vue.js-powered task management dashboard with a responsive Kanban board, enabling users to organize projects and tasks seamlessly. Features multi-language support (Arabic/English), dark/light themes, and drag-and-drop functionality.",
+    image: Dashboard,
+    url: "https://famous-bonbon-63ea46.netlify.app/",
+    tags: ["HTML", "SCSS", "Vue.js", "Pinia", "Vue-i18n", "vuedraggable"],
   },
-{
-  "title": "Softline Web Application",
-  "description": "A modern web application built with Vue.js, featuring a responsive and intuitive interface for streamlined user interactions. Includes dynamic content rendering, theme switching (dark/light modes), and seamless API integration for real-time data updates.",
-  "image": "softline",
-  "url": "https://softline.surge.sh/",
-  "tags": ["HTML", "CSS", "Sass", "Vue.js", "Pinia", "Vite"]
-}
+  {
+    title: "Softline Web Application",
+    description:
+      "A modern web application built with Vue.js, featuring a responsive and intuitive interface for streamlined user interactions. Includes dynamic content rendering, theme switching (dark/light modes), and seamless API integration for real-time data updates.",
+    image: softline,
+    url: "https://softline.surge.sh/",
+    tags: ["HTML", "CSS", "Sass", "Vue.js", "Pinia", "Vite"],
+  },
 ];
-
-
 
 // Reactive variable to track the filter state
 const showFrameworksOnly = ref(false);
@@ -252,7 +254,9 @@ const filteredProjects = computed(() => {
   if (showFrameworksOnly.value) {
     // Switch ON: Show only projects WITH frameworks (Vue.js, Nuxt.js, Vite, Pinia)
     return projects.filter((project) =>
-      project.tags.some((tag) => ["Vue.js", "Nuxt.js", "Vite", "Pinia"].includes(tag))
+      project.tags.some((tag) =>
+        ["Vue.js", "Nuxt.js", "Vite", "Pinia"].includes(tag)
+      )
     );
   } else {
     // Switch OFF: Show only projects WITHOUT frameworks (only HTML, CSS, JavaScript)
@@ -304,11 +308,21 @@ const animateProjects = () => {
     <h2 class="section-title">Projects</h2>
     <div class="filter-toggle">
       <label for="framework-toggle">Show projects with frameworks only</label>
-      <input type="checkbox" id="framework-toggle" v-model="showFrameworksOnly" />
+      <input
+        type="checkbox"
+        id="framework-toggle"
+        v-model="showFrameworksOnly"
+      />
     </div>
     <div class="projects-grid">
-      <a v-for="project in filteredProjects" :key="project.title" :href="project.url" target="_blank"
-        rel="noopener noreferrer" class="project-card">
+      <a
+        v-for="project in filteredProjects"
+        :key="project.title"
+        :href="project.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-card"
+      >
         <div class="project-image">
           <img :src="project.image" :alt="project.title" />
         </div>
