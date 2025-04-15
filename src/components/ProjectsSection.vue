@@ -28,6 +28,7 @@ import nuxt from "../assets/nuxt-api.png";
 import Book from "../assets/book.png";
 import Film from "../assets/film.png";
 import Dashboard from "../assets/Dashboard.png";
+import softline from "../assets/softline.png";
 // Array of project objects with their details
 const projects = [
   {
@@ -231,6 +232,13 @@ const projects = [
   image: Dashboard, 
   url: "https://famous-bonbon-63ea46.netlify.app/", 
   tags: ["HTML", "SCSS", "Vue.js", "Pinia", "Vue-i18n", "vuedraggable"]
+  },
+{
+  "title": "Softline Web Application",
+  "description": "A modern web application built with Vue.js, featuring a responsive and intuitive interface for streamlined user interactions. Includes dynamic content rendering, theme switching (dark/light modes), and seamless API integration for real-time data updates.",
+  "image": "softline",
+  "url": "https://softline.surge.sh/",
+  "tags": ["HTML", "CSS", "Sass", "Vue.js", "Pinia", "Vite"]
 }
 ];
 
