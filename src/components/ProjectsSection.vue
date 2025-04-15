@@ -27,7 +27,7 @@ import Transilation from "../assets/Transilation-App.png";
 import nuxt from "../assets/nuxt-api.png";
 import Book from "../assets/book.png";
 import Film from "../assets/film.png";
-
+import Dashboard from "../assets/Dashboard.png";
 // Array of project objects with their details
 const projects = [
   {
@@ -165,7 +165,7 @@ const projects = [
       "An e-commerce platform built with Vue.js, featuring API-driven product listings and a modern design.",
     image: Shop,
     url: "https://master--friendly-dasik-cbcccf.netlify.app/",
-    tags: ["HTML", "SASS", "Vue.js",  "API"],
+    tags: ["HTML", "SASS", "Vue.js", "API"],
   },
   {
     title: "Weather App (Vue.js)",
@@ -173,7 +173,7 @@ const projects = [
       "A Vue.js-powered weather app with API integration, delivering real-time updates in a sleek design.",
     image: WEATHERVUEJS,
     url: "https://main--dynamic-narwhal-935610.netlify.app/",
-    tags: ["HTML", "SASS", "Vue.js",  "API"],
+    tags: ["HTML", "SASS", "Vue.js", "API"],
   },
   {
     title: "Product Management (Vue.js)",
@@ -223,6 +223,15 @@ const projects = [
     url: "https://film-app-0.netlify.app/",
     tags: ["HTML", "SASS", "API", "Pinia", "Vue.js"],
   },
+
+{
+  title: "Dashboard App",
+  description:
+    "A Vue.js-powered task management dashboard with a responsive Kanban board, enabling users to organize projects and tasks seamlessly. Features multi-language support (Arabic/English), dark/light themes, and drag-and-drop functionality.",
+  image: Dashboard, 
+  url: "https://famous-bonbon-63ea46.netlify.app/", 
+  tags: ["HTML", "SCSS", "Vue.js", "Pinia", "Vue-i18n", "vuedraggable"]
+}
 ];
 
 
@@ -290,14 +299,8 @@ const animateProjects = () => {
       <input type="checkbox" id="framework-toggle" v-model="showFrameworksOnly" />
     </div>
     <div class="projects-grid">
-      <a
-        v-for="project in filteredProjects"
-        :key="project.title"
-        :href="project.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="project-card"
-      >
+      <a v-for="project in filteredProjects" :key="project.title" :href="project.url" target="_blank"
+        rel="noopener noreferrer" class="project-card">
         <div class="project-image">
           <img :src="project.image" :alt="project.title" />
         </div>
@@ -305,7 +308,9 @@ const animateProjects = () => {
           <h3>{{ project.title }}</h3>
           <p>{{ project.description }}</p>
           <div class="tags">
-            <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
+            <span v-for="tag in project.tags" :key="tag" class="tag">{{
+              tag
+            }}</span>
           </div>
         </div>
       </a>
@@ -329,6 +334,7 @@ const animateProjects = () => {
   margin-bottom: 1rem;
   color: var(--text-color);
   position: relative;
+
   &::after {
     content: "";
     width: 60px;
@@ -402,19 +408,16 @@ const animateProjects = () => {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease ;
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
   height: 100%; // Ensure cards fill their grid cell
-     &:hover {
-   transform: scale(1.05);
 
- 
-
+  &:hover {
+    transform: scale(1.05);
   }
-
 }
 
 // Project image styling
@@ -425,10 +428,7 @@ const animateProjects = () => {
     object-fit: contain;
     transition: all 0.2s ease-in;
     padding-top: 20px;
- 
   }
-
-
 }
 
 // Project content styling
@@ -505,12 +505,15 @@ const animateProjects = () => {
 
   .project-content {
     padding: 1rem;
+
     h3 {
       font-size: 1.3em;
     }
+
     p {
       font-size: 0.95em;
     }
+
     .tag {
       font-size: 0.85em;
     }
@@ -519,10 +522,10 @@ const animateProjects = () => {
 
 // Responsive design for mobile devices
 @media (max-width: 480px) {
- 
   .filter-toggle label {
     font-size: 0.8em;
   }
+
   .projects {
     padding: 1.5rem 0.5rem;
   }
