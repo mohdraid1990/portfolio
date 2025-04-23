@@ -251,7 +251,7 @@ const projects = [
       "A modern travel web application built with Vue.js, featuring a responsive and intuitive interface, dynamic content rendering, and theme switching",
     image: Travel,
     url: "https://travel-vuejs.vercel.app/",
-    tags: ["HTML", "CSS", "Sass", "Vue.js",  "Vite"],
+    tags: ["HTML",  "Sass", "Vue.js",  "Vite"],
   },
 ];
 
