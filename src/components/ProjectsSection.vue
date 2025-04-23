@@ -29,6 +29,7 @@ import Book from "../assets/book.png";
 import Film from "../assets/film.png";
 import Dashboard from "../assets/Dashboard.png";
 import softline from "../assets/soft-line.png";
+import Travel from "../assets/travel.png";
 
 
 
@@ -243,6 +244,14 @@ const projects = [
     image: softline,
     url: "https://softline.surge.sh/",
     tags: ["HTML", "CSS", "Sass", "Vue.js", "Pinia", "Vite"],
+  },
+    {
+    title: "Travel Web Application",
+    description:
+      "A modern travel web application built with Vue.js, featuring a responsive and intuitive interface, dynamic content rendering, and theme switching",
+    image: Travel,
+    url: "https://travel-vuejs.vercel.app/",
+    tags: ["HTML", "CSS", "Sass", "Vue.js",  "Vite"],
   },
 ];
 
