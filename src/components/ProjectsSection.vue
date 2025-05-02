@@ -260,7 +260,7 @@ const projects = [
     description:
       "A hospital web application built with Vue.js and Vite, featuring a responsive interface, night and day mode, and multilingual support (3 languages). It uses technologies like Sass, Pinia, and vue-i18n, providing a modern and dynamic experience.",
     image:   hospital,
-    url: "https://travel-vuejs.vercel.app/",
+    url: "https://leafy-speculoos-3174c2.netlify.app/",
     tags: ["HTML",  "Sass", "Vue.js",  "Vite","vue-i18n","pinia"],
   },
 
