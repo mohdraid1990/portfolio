@@ -3,6 +3,8 @@ import { onMounted, ref, computed, watch } from "vue";
 import { gsap } from "gsap";
 
 // Import images for the projects
+  import hospital from "../assets/hospital.png";
+
 import carImage from "../assets/CARS.png";
 import TravilImage from "../assets/Travil.webp";
 import GameImage from "../assets/Game.webp";
@@ -253,6 +255,15 @@ const projects = [
     url: "https://travel-vuejs.vercel.app/",
     tags: ["HTML",  "Sass", "Vue.js",  "Vite"],
   },
+   {
+    title: "hospital Web Application",
+    description:
+      "A hospital web application built with Vue.js and Vite, featuring a responsive interface, night and day mode, and multilingual support (3 languages). It uses technologies like Sass, Pinia, and vue-i18n, providing a modern and dynamic experience.",
+    image:   hospital,
+    url: "https://travel-vuejs.vercel.app/",
+    tags: ["HTML",  "Sass", "Vue.js",  "Vite","vue-i18n","pinia"],
+  },
+
 ];
 
 // Reactive variable to track the filter state
