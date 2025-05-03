@@ -38,7 +38,7 @@ onMounted(() => {
         <router-link to="/projects" class="nav-link">Projects</router-link>
         <router-link to="/contact" class="nav-link">Contact</router-link>
       </div>
-      <button class="menu-toggle" @click="toggleMenu" :class="{ 'is-open': isMenuOpen }">
+      <button class="menu-toggle" @click="toggleMenu" :class="{ 'is-open': isMenuOpen }" aria-label="Toggle Menu">
         <span></span>
         <span></span>
         <span></span>
@@ -320,6 +320,4 @@ main {
 
 
 }
-
-
 </style>
