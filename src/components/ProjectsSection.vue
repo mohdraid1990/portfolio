@@ -3,8 +3,6 @@ import { onMounted, ref, computed, watch } from "vue";
 import { gsap } from "gsap";
 
 // Import images for the projects
-  import hospital from "../assets/hospital.png";
-
 import carImage from "../assets/CARS.png";
 import TravilImage from "../assets/Travil.webp";
 import GameImage from "../assets/Game.webp";
@@ -31,9 +29,7 @@ import Book from "../assets/book.png";
 import Film from "../assets/film.png";
 import Dashboard from "../assets/Dashboard.png";
 import softline from "../assets/soft-line.png";
-import Travel from "../assets/travel.png";
-
-
+import vueFormGenerator from "../assets/vue-form-generator.png";
 
 // Array of project objects with their details
 const projects = [
@@ -155,7 +151,7 @@ const projects = [
     description:
       "A real-time chat application built with Vue.js, featuring a sleek and interactive interface.",
     image: ChatApp,
-    url: "https://chat-app-vuejs-six.vercel.app/",
+    url: "https://chat-app-vuejs.netlify.app/",
     tags: ["HTML", "SASS", "Vue.js", "Pinia"],
   },
   {
@@ -163,7 +159,7 @@ const projects = [
     description:
       "A task management app built with Vue.js, integrating APIs for efficient todo tracking.",
     image: Todo,
-    url: "https://to-do-list-vue-blue.vercel.app/#/",
+    url: "https://main--joyful-chimera-f3e293.netlify.app/#/%E2%80%8EThank",
     tags: ["HTML", "SASS", "Vue.js", "API"],
   },
   {
@@ -171,7 +167,7 @@ const projects = [
     description:
       "An e-commerce platform built with Vue.js, featuring API-driven product listings and a modern design.",
     image: Shop,
-    url: "https://shop-vuejs-1.vercel.app/",
+    url: "https://master--friendly-dasik-cbcccf.netlify.app/",
     tags: ["HTML", "SASS", "Vue.js", "API"],
   },
   {
@@ -179,7 +175,7 @@ const projects = [
     description:
       "A Vue.js-powered weather app with API integration, delivering real-time updates in a sleek design.",
     image: WEATHERVUEJS,
-    url: "https://weather-app-vuejs-beta.vercel.app/",
+    url: "https://main--dynamic-narwhal-935610.netlify.app/",
     tags: ["HTML", "SASS", "Vue.js", "API"],
   },
   {
@@ -187,25 +183,39 @@ const projects = [
     description:
       "A Vue.js-based product management system with a clean, efficient interface for inventory tracking.",
     image: pro,
-    url: "https://product-management-app-vuejs-1.vercel.app/",
+    url: "https://main--celebrated-torrone-3f794f.netlify.app/",
     tags: ["HTML", "SASS", "Vue.js"],
   },
-
+  {
+    title: "Add Posts (Nuxt.js)",
+    description:
+      "A Nuxt.js app for creating posts with API integration, featuring a modern and responsive design.",
+    image: Post,
+    url: "https://radiant-profiterole-85905a.netlify.app/",
+    tags: ["HTML", "SASS", "Nuxt.js", "API"],
+  },
   {
     title: "Translation App (Vite)",
     description:
       "A translation app built with Vite and Vue.js, offering a fast, responsive multilingual experience.",
     image: Transilation,
-    url: "https://translation-app-vite.vercel.app/",
+    url: "https://vocal-frangipane-73e5c3.netlify.app/",
     tags: ["HTML", "SASS", "Vite", "Vue.js"],
   },
-
+  {
+    title: "Nuxt API Project",
+    description:
+      "A Nuxt.js project with API integration, featuring a modern design and seamless functionality.",
+    image: nuxt,
+    url: "https://project-api-nuxt.netlify.app/",
+    tags: ["HTML", "SASS", "Pinia", "Nuxt.js", "API"],
+  },
   {
     title: "Book App",
     description:
       "A Vue.js-based book app with a clean design, offering an intuitive interface for book management.",
     image: Book,
-    url: "https://book-vite-mohdraid1990s-projects.vercel.app/",
+    url: "https://book-0.netlify.app/",
     tags: ["HTML", "SASS", "Vue.js"],
   },
   {
@@ -213,7 +223,7 @@ const projects = [
     description:
       "A Vue.js-powered film app with a sleek design, showcasing movie details and a responsive layout.",
     image: Film,
-    url: "https://movie-vuejs-vite.vercel.app/",
+    url: "https://film-app-0.netlify.app/",
     tags: ["HTML", "SASS", "API", "Pinia", "Vue.js"],
   },
 
@@ -222,7 +232,7 @@ const projects = [
     description:
       "A Vue.js-powered task management dashboard with a responsive Kanban board, enabling users to organize projects and tasks seamlessly. Features multi-language support (Arabic/English), dark/light themes, and drag-and-drop functionality.",
     image: Dashboard,
-    url: "https://dashboard-site-rho.vercel.app/",
+    url: "https://famous-bonbon-63ea46.netlify.app/",
     tags: ["HTML", "SCSS", "Vue.js", "Pinia", "Vue-i18n", "vuedraggable"],
   },
   {
@@ -233,23 +243,21 @@ const projects = [
     url: "https://softline.surge.sh/",
     tags: ["HTML", "CSS", "Sass", "Vue.js", "Pinia", "Vite"],
   },
-    {
-    title: "Travel Web Application",
+  {
+    title: "Vue Form Generator",
     description:
-      "A modern travel web application built with Vue.js, featuring a responsive and intuitive interface, dynamic content rendering, and theme switching",
-    image: Travel,
-    url: "https://travel-vuejs.vercel.app/",
-    tags: ["HTML",  "Sass", "Vue.js",  "Vite"],
+      "A reusable and dynamic form builder built with Vue 3, Vuex, Vue Router, and SCSS. The component renders forms based on configurable JSON schemas, supports input/select/checkbox/textarea elements, custom slots, and includes multiple demo pages. Designed to demonstrate modular architecture and flexible component usage.",
+    image: vueFormGenerator,
+    url: "https://vue-form-generator-kohl.vercel.app/",
+    tags: [
+      "Vue.js",
+      "Vuex",
+      "Vue Router",
+      "SCSS",
+      "Form Builder",
+      "Component Design",
+    ],
   },
-   {
-    title: "hospital Web Application",
-    description:
-      "A hospital web application built with Vue.js and Vite, featuring a responsive interface, night and day mode, and multilingual support (3 languages). It uses technologies like Sass, Pinia, and vue-i18n, providing a modern and dynamic experience.",
-    image:   hospital,
-    url: "https://vuejs-app-hospi-2025.vercel.app/",
-    tags: ["HTML",  "Sass", "Vue.js",  "Vite","vue-i18n","pinia"],
-  },
-
 ];
 
 // Reactive variable to track the filter state
@@ -261,7 +269,7 @@ const filteredProjects = computed(() => {
     // Switch ON: Show only projects WITH frameworks (Vue.js, Nuxt.js, Vite, Pinia)
     return projects.filter((project) =>
       project.tags.some((tag) =>
-        ["Vue.js", "Nuxt.js", "Vite", "Pinia"].includes(tag)
+        ["Vue.js", "Nuxt.js", "Vite", "Pinia", "Vue x "].includes(tag)
       )
     );
   } else {
