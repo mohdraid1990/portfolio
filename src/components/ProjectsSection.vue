@@ -30,6 +30,8 @@ import Film from "../assets/film.png";
 import Dashboard from "../assets/Dashboard.png";
 import softline from "../assets/soft-line.png";
 import vueFormGenerator from "../assets/vue-form-generator.png";
+import compony from "../assets/company.png";
+import hospi from "../assets/hospi.png";
 
 // Array of project objects with their details
 const projects = [
@@ -82,6 +84,15 @@ const projects = [
     url: "https://mohdraid1990.github.io/Bondi_bootstrap5/",
     tags: ["HTML", "CSS", "Java Script"],
   },
+  {
+  title: "Hospital",
+  description:
+    "A modern hospital management interface built with Vue.js and Pinia, offering responsive design and intuitive navigation for patient and doctor data.",
+  image: hospi,
+  url: "https://vuejs-app-hospi.vercel.app/",
+  tags: ["HTML", "SASS", "Vue.js", "Pinia"],
+},
+
   {
     title: "sngosar",
     description:
@@ -154,6 +165,16 @@ const projects = [
     url: "https://chat-app-vuejs.netlify.app/",
     tags: ["HTML", "SASS", "Vue.js", "Pinia"],
   },
+
+  {
+  title: "Travel",
+  description:
+    "A modern travel booking platform built with Vue.js and Pinia. Features a responsive interface, dynamic filtering of destinations, and stylish UI crafted with SASS.",
+  image: compony,
+  url: "https://travel-vuejs-nq9m.vercel.app/",
+  tags: ["HTML", "SASS", "Vue.js", "Pinia"],
+},
+
   {
     title: "Todo List with API",
     description:
